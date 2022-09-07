@@ -1,1 +1,0 @@
-java -cp "%CLASSPATH%:=;Exo1.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client
