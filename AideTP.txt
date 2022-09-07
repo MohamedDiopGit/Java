@@ -1,0 +1,16 @@
+// Compile files in "Server" File
+javac *a 
+
+// Create an archive
+mkdir META-INF
+jar cvf Exo1.jar *s META-INF
+
+// Watch an archive without opening it
+jar tvf Exo1.jar
+
+// Start asadmin
+asadmin start-domain
+
+// Compile Client :
+javac -classpath Exo2.jar Client.java
+java -cp "%CLASSPATH%:TP.jar" --add-opens java.base/java.lang=ALL-UNNAME Client
