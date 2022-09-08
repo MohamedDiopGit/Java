@@ -18,7 +18,9 @@ public class LivreEmp {  // Entity of a book with information (availability,titl
         this.empruntepar = empruntepar; 
     }
     
-
+    public String titreLivre(){
+        return this.titre;
+    }
     public void setNumEmprunter(int numEmp){
         this.empruntepar = numEmp;     // Set the borrower number book
     }
