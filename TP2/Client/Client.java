@@ -9,8 +9,8 @@ public class Client {  // Client to communicate with the server
         try{
             InitialContext initContext = new InitialContext();
             IGestionLivre iGL = (IGestionLivre) initContext.lookup("biblio.IGestionLivre");
-            iGL.nouveauLivre("444","Adventure of Me");
-            iGL.supprimerLivre("444","Adventure of Me");
+            // iGL.nouveauLivre("555","Adventure of You");
+            iGL.supprimerLivre("444");
         }
         catch (NamingException e ){
             System.out.println(e.getMessage());

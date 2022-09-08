@@ -10,7 +10,7 @@ public class GestionLivre implements IGestionLivre {   // Book Gestion
     protected EntityManager em;
 
     // Create a book in the database
-    public void nouveauLivre(String isbn, String titre, int dispo) {
+    public void nouveauLivre(String isbn, String titre) {
         Livre L = new Livre(isbn, titre);
         em.persist(L);
         // System.out.println("New book created : " + isbn + " | " + titre);
