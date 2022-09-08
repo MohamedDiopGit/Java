@@ -25,8 +25,8 @@ java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Clien
 ///////// TP 2     
 
 ** In "Server" dir  
-javac biblio\*a  
-jar cvf TP2.jar biblio\*s META-INF\*xml    
+javac biblio\\*a  
+jar cvf TP2.jar biblio\\*s META-INF\\\*xml    
 
 ** In "Client" dir  
 Copy the TP2.jar to the client directory  
