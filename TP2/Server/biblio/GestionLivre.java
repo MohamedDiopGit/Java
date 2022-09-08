@@ -9,9 +9,51 @@ public class GestionLivre implements IGestionLivre {
     @PersistenceContext(unitName="biblioPu")
     protected EntityManager em;
 
-    public void nouveauLivre(String isbn, String titre) {
-        Livre l = new Livre(isbn, titre);
-        em.persist(l);
+    public void nouveauLivre(String isbn, String titre, int dispo) {
+        Livre L = new Livre(isbn, titre);
+        em.persist(L);
         // System.out.println("New book created : " + isbn + " | " + titre);
     }
+
+    public void supprimerLivre(String isbn) {
+        Livre same = em.find(biblio.Livre.class,isbn); //managed same
+        em.remove(same); // entity is removed
+
+    }
+    public void rendreLivre(String isbn) {
+        Livre same = em.find(biblio.Livre.class,isbn); //managed same
+        em.remove(same); // entity is removed
+        Livre L = new Livre(same.isbn, same.titre, 1);
+        em.persist(L);
+    }
+    public void emprunterLivre(String isbn) {
+        Livre same = em.find(biblio.Livre.class,isbn); //managed same
+        em.remove(same); // entity is removed
+        Livre L = new Livre(same.isbn, same.titre, 0);
+        em.persist(L);
+    }
 }
+
+
+
+// @Stateful
+// public class GestionLivre implements IGestionLivre {
+
+//     @PersistenceContext(unitName="biblioPu")
+//     protected EntityManager em;
+
+//     Livre l = new Livre();
+
+//     public void nouveauLivre(String isbn, String titre) {
+//         l.isbn = isbn;
+//         l.titre = titre;
+//         em.persist(l);
+//         // System.out.println("New book created : " + isbn + " | " + titre);
+//     }
+
+//     public void supprimerLivre(String isbn, String titre) {
+//         em.remove(l);
+//         // System.out.println("New book created : " + isbn + " | " + titre);
+//     }
+// }
+

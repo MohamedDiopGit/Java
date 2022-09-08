@@ -13,5 +13,10 @@ public class Livre {
         this.isbn = isbn;
         this.titre = titre;
     }
+    public Livre(String isbn, String titre, int dispo){
+        this.isbn = isbn;
+        this.titre = titre;
+        this.dispo = dispo; 
+    }
     
 }
