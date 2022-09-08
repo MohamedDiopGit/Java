@@ -12,12 +12,12 @@ public class InfosLivre implements IInfosLivre{
     protected EntityManager em;  // EntityManager object
 
     public String afficherTitre(String ISBN){
-        LivreEmp livre = em.find(emprunt.LivreEmp.class,ISBN); //s
+        LivreEmp livre = em.find(emprunt.LivreEmp.class,ISBN); 
         Query query = em.createQuery("SELECT titre FROM livre_emp WHERE isbn=:ISBN");
         List<emprunt.LivreEmp> listUsers = query.setParameter("ISBN",ISBN).getResultList();
 
         LivreEmp l = listUsers.get(0);
-        return l.titre;
+        return l.titreLivre();
     }
     public String afficherToutLesTitres(){
         Query query = em.createQuery("SELECT titre FROM livre_emp WHERE empruntepar=0");
