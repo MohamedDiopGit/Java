@@ -26,16 +26,16 @@ public class GestionLivre implements IGestionLivre {   // Book Gestion
     // Setters : set the availability of a book
     public void rendreLivre(String isbn) {
         Livre same = em.find(biblio.Livre.class,isbn); //managed same
-        em.remove(same); // entity is removed
         Livre L = new Livre(same.isbn, same.titre, 1);
+        em.remove(same); // entity is removed
         em.persist(L);
     }
 
     // Setters : set the availability of a book
     public void emprunterLivre(String isbn) {
         Livre same = em.find(biblio.Livre.class,isbn); //managed same
-        em.remove(same); // entity is removed
         Livre L = new Livre(same.isbn, same.titre, 0);
+        em.remove(same); // entity is removed
         em.persist(L);
     }
 }
