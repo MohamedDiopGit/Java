@@ -11,6 +11,8 @@ public class InfosLivre implements IInfosLivre{
     @PersistenceContext(unitName="biblioPu")
     protected EntityManager em;  // EntityManager object
 
+
+    // Display name of the books
     public String afficherTitre(String ISBN){
         LivreEmp livre = em.find(emprunt.LivreEmp.class,ISBN); 
         Query query = em.createQuery("SELECT livre FROM LivreEmp AS livre WHERE livre.isbn=:ISBN");
@@ -20,6 +22,8 @@ public class InfosLivre implements IInfosLivre{
         LivreEmp l = listLivres.get(0);
         return l.titreLivre();
     }
+
+    // Display the list of all available books
     public List<LivreEmp> afficherToutLesTitres(){
         Query query = em.createQuery("SELECT livre FROM LivreEmp AS livre WHERE livre.empruntepar=0");
         List<emprunt.LivreEmp> listLivres = query.getResultList();

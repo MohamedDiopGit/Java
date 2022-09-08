@@ -9,7 +9,7 @@ public class GestionEmprunt implements IGestionEmprunt {   // Book Gestion
     @PersistenceContext(unitName="biblioPu")
     protected EntityManager em;  // EntityManager object
 
-    private Emprunteur emp;  // Borrower
+    private Emprunteur emp;  // Borrower of books
 
     // Setters : set the borrower session
     public void nouvelleSession(int numEmp){
@@ -22,14 +22,14 @@ public class GestionEmprunt implements IGestionEmprunt {   // Book Gestion
         LivreEmp livre = em.find(emprunt.LivreEmp.class,isbn); //Find the book 
         livre.setNumEmprunter(0);
         em.merge(livre); // entity is removed and deleted in the server 
-        emp.decrementNBLivresEmp();
+        emp.decrementNBLivresEmp();     // Decrement the number of book borrowed
         em.merge(emp);
     }
 
     // Setters : set the availability of a book
     public void emprunterLivre(String isbn) {
         LivreEmp livre = em.find(emprunt.LivreEmp.class,isbn); //Find the book 
-        livre.setNumEmprunter(emp.getNumEmp());
+        livre.setNumEmprunter(emp.getNumEmp());     // Referencing the book borrower
         em.merge(livre); // entity is removed and deleted in the server 
 
         emp.incrementNBLivresEmp();
