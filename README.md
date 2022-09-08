@@ -20,6 +20,9 @@ jar tvf Exo1.jar
 // Start asadmin  
 asadmin start-domain    
 
+//deploy an archive
+asaadm deploy --force ArchiveName.jar
+
 ** In "Client" dir 
 // Compile Client  (example):  
 javac -classpath Exo2.jar Client.java  
@@ -29,9 +32,21 @@ java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Clien
 
 ** In "Server" dir  
 javac biblio\\*a  
+del emprunt\*_*
 jar cvf TP2.jar biblio\\*s META-INF\\\*xml    
 
 ** In "Client" dir  
 Copy the TP2.jar to the client directory  
 javac -classpath TP2.jar Client.java  
 java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
+
+
+///////// TP 3    
+** In "Server" directory 
+javac emprunt\\*a  
+del emprunt\*_*
+jar cvf TP3.jar emprunt\*s META-INF\*xml    
+
+** In "Client" directory
+javac -classpath TP3.jar Client.java  
+java -cp "%CLASSPATH%;TP3.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
