@@ -3,7 +3,7 @@ import javax.naming.NamingException;
 
 import biblio.IGestionLivre;
 
-public class Client {
+public class Client {  // Client to communicate with the server
     
     public static void main(String[] args){
         try{

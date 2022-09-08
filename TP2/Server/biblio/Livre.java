@@ -3,7 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Livre {
+public class Livre {  // Entity of a book with information (availability,title, isbn)
     @Id String isbn;
     String titre;
     int dispo;
