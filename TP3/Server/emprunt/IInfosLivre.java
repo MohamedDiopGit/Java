@@ -1,6 +1,9 @@
 package emprunt;
+import jakarta.ejb.Remote;
+import java.util.List;
 
+@Remote
 public interface IInfosLivre {
     public String afficherTitre(String isbn);
-    public String afficherToutLesTitres();
+    public List<LivreEmp> afficherToutLesTitres();
 }

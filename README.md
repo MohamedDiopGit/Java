@@ -1,7 +1,7 @@
 # Java
 Java courses with the use of Bean Session and PostgreSQL
 
-Implementation of Java Beans, Bean Session with Stateful and Stateless, for the understanding of the difference between Stateful and Stateless Beans and more. Furthermore, I introduced my self to the building of a Java app : .jar compression, java classes, java compilator and GlassFish server  
+Implementation of Java Beans, Bean Session with Stateful and Stateless, for the understanding of the difference between Stateful and Stateless Beans, API Query. Furthermore, I introduced my self to the building of a Java app : .jar compression, java classes, java compilator and GlassFish server  
 
 
 ///////// TP 1    
@@ -21,7 +21,7 @@ jar tvf Exo1.jar
 asadmin start-domain    
 
 //deploy an archive
-asaadm deploy --force ArchiveName.jar
+asadmin deploy --force TP3.jar
 
 ** In "Client" dir 
 // Compile Client  (example):  
@@ -43,10 +43,12 @@ java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Clien
 
 ///////// TP 3    
 ** In "Server" directory 
-javac emprunt\\*a  
+javac emprunt\*a  
 del emprunt\*_*
-jar cvf TP3.jar emprunt\*s META-INF\*xml    
+jar cvf TP3.jar emprunt\*s META-INF\*xml  
+  
 
 ** In "Client" directory
+asadmin deploy --force TP3.jar
 javac -classpath TP3.jar Client.java  
 java -cp "%CLASSPATH%;TP3.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    

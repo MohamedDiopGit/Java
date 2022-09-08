@@ -13,16 +13,18 @@ public class InfosLivre implements IInfosLivre{
 
     public String afficherTitre(String ISBN){
         LivreEmp livre = em.find(emprunt.LivreEmp.class,ISBN); 
-        Query query = em.createQuery("SELECT titre FROM livre_emp WHERE isbn=:ISBN");
-        List<emprunt.LivreEmp> listUsers = query.setParameter("ISBN",ISBN).getResultList();
+        Query query = em.createQuery("SELECT livre FROM LivreEmp AS livre WHERE livre.isbn=:ISBN");
+        
+        List<emprunt.LivreEmp> listLivres = query.setParameter("ISBN",ISBN).getResultList();
 
-        LivreEmp l = listUsers.get(0);
+        LivreEmp l = listLivres.get(0);
         return l.titreLivre();
     }
-    public String afficherToutLesTitres(){
-        Query query = em.createQuery("SELECT titre FROM livre_emp WHERE empruntepar=0");
-        List<emprunt.LivreEmp> listUsers = query.getResultList();
-        return "ok";
+    public List<LivreEmp> afficherToutLesTitres(){
+        Query query = em.createQuery("SELECT livre FROM LivreEmp AS livre WHERE livre.empruntepar=0");
+        List<emprunt.LivreEmp> listLivres = query.getResultList();
+
+        return listLivres;
     }
 
 }
