@@ -21,12 +21,12 @@ jar tvf Exo1.jar
 asadmin start-domain    
 
 //deploy an archive
-asadmin deploy --force TP3.jar
+asadmin deploy --force Exo1.jar
 
 ** In "Client" dir 
 // Compile Client  (example):  
-javac -classpath Exo2.jar Client.java  
-java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
+javac -classpath Exo1.jar Client.java  
+java -cp "%CLASSPATH%;Exo1.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
 
 ///////// TP 2     
 
