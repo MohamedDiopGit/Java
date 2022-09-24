@@ -1,10 +1,10 @@
 # Java
-Java school courses with the use of Bean Session, GlassFish, API QUery and PostgreSQL.
+<h1>Java school courses with the use of Bean Session, GlassFish, API QUery and PostgreSQL.</h1>
 
 Implementation of Java Beans, Bean Session with Stateful and Stateless, for the understanding of the difference between Stateful and Stateless Beans, Object Serialization, API Query, SQL in Java, EJB. Furthermore, I introduced my self to the building of a Java app : .jar compression, java compilator, PostgreSQL database and GlassFish server.
 
 
-///////// TP 1    
+<h2>TP 1</h2>    
 
 ** In "Server" dir  
 // Compile files in "Server" File  
@@ -28,7 +28,7 @@ asadmin deploy --force Exo1.jar
 javac -classpath Exo1.jar Client.java  
 java -cp "%CLASSPATH%;Exo1.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
 
-///////// TP 2     
+<h2>TP 2</h2>     
 
 ** In "Server" dir  
 javac biblio\\*a  
@@ -42,7 +42,7 @@ javac -classpath TP2.jar Client.java
 java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
 
 
-///////// TP 3    
+<h2>TP 3</h2>    
 ** In "Server" directory 
 javac emprunt\\*a  
 del emprunt\\\*_*  
