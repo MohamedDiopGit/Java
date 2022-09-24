@@ -10,32 +10,32 @@ Implementation of Java Beans, Bean Session with Stateful and Stateless, for the 
 // Compile files in "Server" File  
 javac *a  
 
-// Create an archive (example)  
+<h3>Create an archive (example)</h3>  
 mkdir META-INF  
 jar cvf Exo1.jar *s META-INF  
 
-// Watch an archive without opening it  
+<h3>Watch an archive without opening it</h3>  
 jar tvf Exo1.jar  
     
-// Start asadmin  
+<h3>Start asadmin</h3>  
 asadmin start-domain    
 
-//deploy an archive
+<h3>deploy an archive</h3>
 asadmin deploy --force Exo1.jar
 
-** In "Client" dir 
-// Compile Client  (example):  
+<h3>In "Client" dir 
+// Compile Client  (example)</h3> 
 javac -classpath Exo1.jar Client.java  
 java -cp "%CLASSPATH%;Exo1.jar" --add-opens java.base/java.lang=ALL-UNNAMED Client    
 
 <h2>TP 2</h2>     
 
-** In "Server" dir  
+<h3>In "Server" dir</h3>  
 javac biblio\\*a  
 del emprunt\*_*
 jar cvf TP2.jar biblio\\*s META-INF\\\*xml    
 
-** In "Client" dir  
+<h3>In "Client" dir</h3>  
 Copy the TP2.jar to the client directory 
 asadmin deploy --force TP3.jar 
 javac -classpath TP2.jar Client.java  
@@ -43,13 +43,13 @@ java -cp "%CLASSPATH%;TP2.jar" --add-opens java.base/java.lang=ALL-UNNAMED Clien
 
 
 <h2>TP 3</h2>    
-** In "Server" directory 
+<h3>In "Server" directory</h3> 
 javac emprunt\\*a  
 del emprunt\\\*_*  
 jar cvf TP3.jar emprunt\\*s META-INF\\\*xml  
   
 
-** In "Client" directory  
+<h3>In "Client" directory</h3>  
 Copy the TP3.jar to the client directory  
 asadmin deploy --force TP3.jar  
 javac -classpath TP3.jar Client.java  
